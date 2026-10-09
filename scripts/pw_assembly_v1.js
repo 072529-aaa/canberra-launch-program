@@ -23,7 +23,7 @@ async (page) => {
     return { width, height, different, colors: colors.size };
   });
   await page.setViewportSize({ width: 1280, height: 720 });
-  await page.goto("http://127.0.0.1:4173");
+  await page.goto(new URL("./", page.url()).href);
   await fresh();
   await page.getByRole("button", { name: "恢复基础构型", exact: true }).click();
   await page.locator(".sheet-panel").getByRole("button", { name: "确认", exact: true }).click();

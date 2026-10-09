@@ -1,11 +1,12 @@
 async (page) => {
+  const siteUrl = new URL("./", page.url()).href;
   const context = await page.context().browser().newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const mobile = await context.newPage();
   const errors = [];
   mobile.on("pageerror", (error) => errors.push(error.message));
   const require = (value, message) => { if (!value) throw new Error(message); };
   try {
-    await mobile.goto("http://127.0.0.1:4173");
+    await mobile.goto(siteUrl);
     await mobile.waitForFunction(() => window.gameApp?.assemblyScene?.renderer);
     await mobile.screenshot({ path: "output/playwright/assembly-v1-touch.png" });
     await mobile.getByRole("button", { name: "ENG K-1", exact: true }).tap();
@@ -59,7 +60,7 @@ async (page) => {
     require(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "Touch result overflow");
     await mobile.screenshot({ path: "output/playwright/assembly-v1-result-mobile.png", fullPage: true });
     require(errors.length === 0, `Page errors: ${errors.join("; ")}`);
-    await page.goto("http://127.0.0.1:4173");
+    await page.goto(siteUrl);
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.waitForFunction(() => window.gameApp?.assemblyScene?.renderer);
     await page.evaluate(() => window.scrollTo(0, 0));

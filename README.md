@@ -106,3 +106,4 @@ playwright-cli.cmd --session assembly-v1 run-code --filename scripts/pw_assembly
 
 实验对照和经营模式另由 `scripts/pw_experiment_career_v1.js` 验证。脚本会在自己的测试会话恢复基础构型，不应在玩家的浏览器会话运行。
 触屏交互由 `scripts/pw_touch_v1.js` 验证。多轮经营验收使用真实物理的额外固定步加速，桌面/手机脚本另行覆盖正常实时飞行。
+这三份脚本沿用当前浏览器的站点地址，也可在打开公网 Pages 页面后运行，用同一流程验收正式部署。

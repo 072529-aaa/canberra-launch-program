@@ -2,7 +2,7 @@ async (page) => {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   const require = (value, message) => { if (!value) throw new Error(message); };
-  await page.goto("http://127.0.0.1:4173");
+  await page.goto(new URL("./", page.url()).href);
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.waitForFunction(() => window.gameApp?.assemblyScene?.renderer);
   await page.getByRole("button", { name: "恢复基础构型", exact: true }).click();
