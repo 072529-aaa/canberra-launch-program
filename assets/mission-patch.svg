@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#193a43"/>
+      <stop offset="1" stop-color="#071116"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#ef6b49"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#sky)" stroke="#55d6c7" stroke-width="4"/>
+  <ellipse cx="80" cy="80" rx="61" ry="24" fill="none" stroke="#55d6c7" stroke-width="3" transform="rotate(-24 80 80)"/>
+  <circle cx="80" cy="80" r="42" fill="#10252c" stroke="#3b6570" stroke-width="2"/>
+  <path d="M80 30 94 69 88 103 80 120 72 103 66 69Z" fill="#eef4f6"/>
+  <path d="M80 30 94 69 80 77Z" fill="#9fb0b8"/>
+  <path d="M66 72 53 106 69 99Z" fill="#ff7068"/>
+  <path d="M94 72 107 106 91 99Z" fill="#ff7068"/>
+  <path d="M74 119 80 149 86 119Z" fill="url(#flame)"/>
+  <path d="M30 44 48 54 39 69Z" fill="#ffbf5c"/>
+  <path d="M130 116 112 106 121 91Z" fill="#ffbf5c"/>
+  <text x="80" y="143" fill="#eef4f6" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="2">CANBERRA</text>
+</svg>

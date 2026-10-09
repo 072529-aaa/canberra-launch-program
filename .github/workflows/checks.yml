@@ -1,0 +1,29 @@
+name: Prototype Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  simulation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Deterministic simulation and economy tests
+        run: node --test tests/*.test.mjs
+      - name: Check browser modules
+        run: |
+          node --check src/app.js
+          node --check src/app3d.js
+          node --check src/craft.js
+          node --check src/physics.js
+          node --check src/state.js
+          node --check src/clock.js
+          node --check src/three/rocketModel.js
+          node --check src/three/scenes.js

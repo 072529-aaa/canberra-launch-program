@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Canberra Launch Program - 航天器制造、发射与经营模拟原型"
+    />
+    <title>Canberra Launch Program</title>
+    <link rel="icon" href="./assets/mission-patch.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles3d.css" />
+  </head>
+  <body data-theme="light">
+    <div id="app">
+      <header class="app-header">
+        <button class="brand" id="brand-home" type="button" aria-label="返回任务中心">
+          <img src="./assets/mission-patch.svg" alt="" />
+          <span>
+            <strong>CANBERRA</strong>
+            <small>航天计划</small>
+          </span>
+        </button>
+        <div class="header-context" id="header-context"></div>
+        <div class="header-actions">
+          <div class="resource-strip" id="resource-strip" aria-label="项目资源"></div>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="切换明暗主题" title="切换明暗主题"></button>
+        </div>
+      </header>
+      <div class="app-shell">
+        <aside class="nav-rail" id="nav-rail" aria-label="主导航"></aside>
+        <main id="view" tabindex="-1"></main>
+      </div>
+      <nav class="mobile-tabbar" id="mobile-nav" aria-label="移动端主导航"></nav>
+      <div id="toast-region" class="toast-region" aria-live="polite"></div>
+      <div id="sheet-region"></div>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./node_modules/three/build/three.module.js",
+          "three/addons/": "./node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./src/app3d.js"></script>
+  </body>
+</html>
